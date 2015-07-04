@@ -2,8 +2,7 @@
 
 import React from "react/addons";
 import Helmet from "../index.jsx";
-
-const HELMET_ATTRIBUTE = "data-react-helmet";
+import {HELMET_ATTRIBUTE} from "../HelmetConstants.js";
 
 describe("Helmet", () => {
     var headElement;

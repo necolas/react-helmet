@@ -1,10 +1,8 @@
 import React from "react";
 import ExecutionEnvironment from "exenv";
 import CreateSideEffect from "./CreateSideEffect";
-import {TAG_NAMES, TAG_PROPERTIES} from "./HelmetConstants.js";
+import {HELMET_ATTRIBUTE, TAG_NAMES, TAG_PROPERTIES} from "./HelmetConstants.js";
 import HTMLEntities from "he";
-
-const HELMET_ATTRIBUTE = "data-react-helmet";
 
 const getInnermostProperty = (propsList, property) => {
     for (const props of [...propsList].reverse()) {

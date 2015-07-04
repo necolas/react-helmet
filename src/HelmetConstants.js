@@ -1,3 +1,5 @@
+const HELMET_ATTRIBUTE = "data-react-helmet";
+
 const TAG_NAMES = {
     META: "meta",
     LINK: "link"
@@ -12,4 +14,4 @@ const TAG_PROPERTIES = {
     PROPERTY: "property"
 };
 
-export default {TAG_NAMES, TAG_PROPERTIES};
+export default {HELMET_ATTRIBUTE, TAG_NAMES, TAG_PROPERTIES};
