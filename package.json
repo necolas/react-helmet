@@ -73,6 +73,7 @@
     "test": "karma start karma.config.js",
     "posttest": "cat ./build/reports/coverage/text.txt",
     "compile": "babel src --out-dir dist",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run compile",
+    "watch": "npm test -- --no-single-run"
   }
 }

@@ -80,12 +80,13 @@ const updateTitle = title => {
 const updateTags = (type, tags) => {
     const headElement = document.head || document.querySelector("head");
     const existingTags = headElement.querySelectorAll(`${type}[${HELMET_ATTRIBUTE}]`);
+    const fragment = document.createDocumentFragment();
 
     // Remove any tags previously injected by Helmet
-    Array.forEach(existingTags, tag => tag.parentNode.removeChild(tag));
+    [...existingTags].forEach(tag => tag.parentNode.removeChild(tag));
 
     if (tags && tags.length) {
-        tags.forEach(tag => {
+        tags.reverse().forEach(tag => {
             const newElement = document.createElement(type);
 
             for (const attribute in tag) {
@@ -95,8 +96,10 @@ const updateTags = (type, tags) => {
             }
 
             newElement.setAttribute(HELMET_ATTRIBUTE, "true");
-            headElement.insertBefore(newElement, headElement.firstChild);
+            fragment.appendChild(newElement);
         });
+
+        headElement.insertBefore(fragment, headElement.firstChild);
     }
 };
 
